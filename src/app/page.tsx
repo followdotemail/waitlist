@@ -48,7 +48,6 @@ export default function Home() {
           return;
         }
 
-        // If email sending is successful, proceed to insert into Notion
         const notionResponse = await fetch("/api/notion", {
           method: "POST",
           headers: {
