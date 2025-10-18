@@ -55,7 +55,7 @@ export default function Home() {
           },
           body: JSON.stringify({ name, email }),
         });
-
+          //fix
         const notionData = await notionResponse.json();
 
         if (!notionResponse.ok) {
