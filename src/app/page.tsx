@@ -11,10 +11,13 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setEmail(e.target.value);
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setName(e.target.value);
 
-  const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isValidEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async () => {
     if (!name || !email) return;
@@ -42,9 +45,12 @@ export default function Home() {
           const errorMap = {
             429: "Rate limited",
             409: "Email already sent",
-            400: mailData.error || "Invalid input"
+            400: mailData.error || "Invalid input",
           };
-          reject(errorMap[mailResponse.status as keyof typeof errorMap] || "Email sending failed");
+          reject(
+            errorMap[mailResponse.status as keyof typeof errorMap] ||
+              "Email sending failed"
+          );
           return;
         }
 
@@ -55,16 +61,19 @@ export default function Home() {
           },
           body: JSON.stringify({ name, email }),
         });
-          //fix
+        //fix::
         const notionData = await notionResponse.json();
 
         if (!notionResponse.ok) {
           const errorMap = {
             429: "Rate limited",
             409: "Email already exists",
-            400: notionData.error || "Invalid input"
+            400: notionData.error || "Invalid input",
           };
-          reject(errorMap[notionResponse.status as keyof typeof errorMap] || "Notion insertion failed");
+          reject(
+            errorMap[notionResponse.status as keyof typeof errorMap] ||
+              "Notion insertion failed"
+          );
         } else {
           resolve({ name });
         }
@@ -85,10 +94,15 @@ export default function Home() {
           "Rate limited": "You're doing that too much. Please try again later.",
           "Email already sent": "You're already on our waitlist!",
           "Email already exists": "You're already on our waitlist!",
-          "Email sending failed": "Failed to send welcome email. Please try again!",
-          "Notion insertion failed": "Failed to save your details. Please try again!"
+          "Email sending failed":
+            "Failed to send welcome email. Please try again!",
+          "Notion insertion failed":
+            "Failed to save your details. Please try again!",
         };
-        return errorMessages[error as keyof typeof errorMessages] || "An error occurred. Please try again 😢";
+        return (
+          errorMessages[error as keyof typeof errorMessages] ||
+          "An error occurred. Please try again 😢"
+        );
       },
     });
 
