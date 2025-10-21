@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<h2> Follow Email </h2>
 
-First, run the development server:
+**Follow Email** is a powerful email management and automation tool.  
+Streamline your inbox with AI-powered summaries, automated follow-ups, and custom email templates.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌟 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🤖 **AI Email Summary**  
+    Get intelligent summaries of your emails powered by AI.
 
-## Learn More
+- 📧 **Auto Email Follow-ups**  
+    Automatically send follow-up emails with custom or AI-generated content.
 
-To learn more about Next.js, take a look at the following resources:
+- 📝 **Custom Email Templates**  
+    Create and manage personalized email templates for efficient communication.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Tech Stack
 
-## Deploy on Vercel
+### Backend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Tool                                            | Role                     |
+| ----------------------------------------------- | ------------------------ |
+| [`Golang`](https://go.dev)                      | Backend Language         |
+| [`Neon`](https://neon.tech)                     | Database                 |
+| [`Upstash`](https://upstash.com/)               | Queue (QStash)           |
+| [`Clerk`](https://clerk.com)                    | Authentication           |
+| [`GCP`](https://cloud.google.com)               | Gmail API                |
+| [`Excloud`](https://excloud.com)                | Deployment & Hosting     |
+| [`Nginx`](https://nginx.org)                    | Reverse Proxy            |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Frontend
+
+| Tool                                            | Role                     |
+| ----------------------------------------------- | ------------------------ |
+| [`Next.js`](https://nextjs.org)                 | Frontend Framework       |
+| [`TypeScript`](https://www.typescriptlang.org)  | Programming Language     |
+| [`Clerk`](https://clerk.com)                    | Authentication           |
+| [`Vercel`](https://vercel.com)                  | Hosting & Deployment     |
+| [`SWR`](https://swr.vercel.app)                 | Data Fetching            |
+
+---
+
+## 🔗 Connect
+
+- [Follow Email](https://x.com/followdotemail)
+- [Tanmoy Saha](https://x.com/tanmoytssaha)
+- [Sandip Sarkar](https://x.com/sandip_dev_07)
+
+---
+
+> Built with ❤️ by the Follow Email team.
