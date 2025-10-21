@@ -1,10 +1,10 @@
 <div align="center">
 
 <!-- <h2 style='display: flex; align-items: center; justify-content: center;'><img src='https://www.follow.email/logo.svg' alt='followdotemail' width='48' height='48'/> Follow Email </h2> -->
-<div align="center">
-  <img src="https://www.follow.email/logo.svg" alt="followdotemail" width="48" height="48"/>
-  <h2>Follow Email</h2>
-</div>
+<p align="center">
+  <img src="https://www.follow.email/logo.svg" alt="followdotemail" width="48" height="48">&nbsp;&nbsp;
+  <strong>Follow Email</strong>
+</p>
 
 **Follow Email** is a powerful email management and automation tool.  
 Streamline your inbox with AI-powered summaries, automated follow-ups, and custom email templates.
