@@ -28,6 +28,30 @@ export async function POST(request: NextRequest) {
     const continent = request.headers.get("x-vercel-ip-continent") || "Unknown";
     const locationString = `${city}, ${country}, ${continent}`;
 
+    // Get referrer/platform data
+    const referrer = request.headers.get("referer") || "Direct";
+    const userAgent = request.headers.get("user-agent") || "";
+
+    // Detect platform from referrer
+    let platform = "Direct";
+    if (referrer.includes("google.com")) platform = "Google";
+    else if (referrer.includes("facebook.com")) platform = "Facebook";
+    else if (referrer.includes("twitter.com") || referrer.includes("x.com"))
+      platform = "Twitter/X";
+    else if (referrer.includes("linkedin.com")) platform = "LinkedIn";
+    else if (referrer.includes("peerlist.io")) platform = "Peerlist";
+    else if (referrer.includes("instagram.com")) platform = "Instagram";
+    else if (referrer.includes("youtube.com")) platform = "YouTube";
+    else if (referrer.includes("reddit.com")) platform = "Reddit";
+    else if (referrer.includes("github.com")) platform = "GitHub";
+    else if (referrer.includes("producthunt.com")) platform = "Product Hunt";
+    else if (
+      referrer.includes("hackernews") ||
+      referrer.includes("ycombinator")
+    )
+      platform = "Hacker News";
+    else if (referrer !== "Direct") platform = "Other Website";
+
     // Initialize Redis for duplicate prevention
     const redis = new Redis({
       url: process.env.UPSTASH_REDIS_REST_URL,
@@ -72,6 +96,28 @@ export async function POST(request: NextRequest) {
               type: "text",
               text: {
                 content: locationString,
+              },
+            },
+          ],
+        },
+        Platform: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: platform,
+              },
+            },
+          ],
+        },
+        Referrer: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: referrer,
               },
             },
           ],
